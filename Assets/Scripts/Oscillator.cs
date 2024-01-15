@@ -16,40 +16,55 @@ public class Oscillator : MonoBehaviour
     [SerializeField]
     private float velocity = 1.0f;
 
+    // The direction vector of the oscillation
     private Vector3 direction = new Vector3(1, 0, 0);
+
+    // A Transform component to hold the reference to the fish's transform
     private Transform fishTransform;
+
+    // To store the previous value of the sine wave
     private float previousSinWave;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        // Output to the console
         Debug.Log("Start");
+
+        // Get the Transform component of the current fish
         fishTransform = GetComponent<Transform>();
+
+        // Set the center point as the current position of the fish
         center = fishTransform.position;
+
+        // Calculate the initial sine wave value based on the current time and velocity
         previousSinWave = Mathf.Sin(Time.time * velocity);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Output to the console
         Debug.Log("Update");
-        float cycle = Time.time * velocity;
-        float sinWave = Mathf.Sin(cycle); // This will give a value between -1 and 1
 
-        // Flip the fish image based on the direction of the movement
-        if (sinWave < previousSinWave && fishTransform.localScale.x > 0 ||
-            sinWave > previousSinWave && fishTransform.localScale.x < 0)
+        // Calculate the current sine wave value, which return a value between -1 and 1
+        float CurrentsinWave = Mathf.Sin(Time.time * velocity);
+
+        // Flip the fish direction based on the direction of the movement
+        if (CurrentsinWave < previousSinWave && fishTransform.localScale.x > 0 ||
+            CurrentsinWave > previousSinWave && fishTransform.localScale.x < 0)
         {
             fishTransform.localScale = new Vector3(-fishTransform.localScale.x, fishTransform.localScale.y, fishTransform.localScale.z);
         }
 
-        previousSinWave = sinWave; // Update the previousSinWave value for the next frame
+        // Update the previousSinWave value for the next frame
+        previousSinWave = CurrentsinWave;
 
         // Determine the distance to move for this frame
-        float moveStep = sinWave * maxDistance;
+        float moveStep = CurrentsinWave * maxDistance;
 
-        // Calculate the new position based on the oscillation
-        Vector3 offset = moveStep * direction.normalized;
-        fishTransform.position = center + offset;
+        // Calculate the new position
+        fishTransform.position = center + (moveStep * direction.normalized);
     }
 }
