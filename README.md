@@ -1,20 +1,18 @@
-<div dir='rtl' lang='he'>
-
 # Life under water
-**המשחק מדגים את הרכיבים הבאים:**
 
-1. **רכיב Oscillator:** הדגים בצבעים **אדום**,**ורוד וכחול** מדגימים את השימוש ברכיב Oscillator במיקומים שונים,מהירויות שונות וטווח מרחקים שונה.
+The game was built as part of an assignment in a computer game development course.
 
-2. **רכיב Rotator:** **כוכב הים** מדגים לנו את השימוש ברכיב זה ויוצר את הסיבוב של הכוכב סביב עצמו.
+The purpose of the assignment is building components and writing scripts:
 
-3. **רכיב Beat:** **דג הבלון** מדגים לנו את השימוש ברכיב זה ויוצר אפקט המדמה לב פועם על ידי הגדלה והקטנה שלו.
+1. **Oscillator component**: The fish in **red**, **pink** and **blue** colors demonstrate the use of the Oscillator component in different locations, different speeds and different distance ranges.
 
-4. **רכיב Hide:** **הדג הירוק** מדגים לנו את הרכיב. הדג ניתן להסתרה על ידי לחיצה על כפתור 'H' במקלדת, וביטול ההסתרה על ידי לחיצה חוזרת על כפתור  'H' במקלדת.
-   
- [קישור לאתר "itch.io" - לחץ כאן](https://alinaandyuval.itch.io/life-under-water) 
+2. **Rotator component**: The **starfish** demonstrates to us the use of this component and creates the rotation of the star around itself.
 
+3. **Beat component**: The **balloonfish** demonstrates the use of this component and creates an effect simulating a beating heart by increasing and decreasing it.
+
+4. **Hide component**: The **green** fish demonstrates the component to us. The fish can be hidden by pressing the 'H' button on the keyboard, and unhiding by pressing and holding the 'H' button on the keyboard.
+
+* [Click here to play on itch.io](https://alinaandyuval.itch.io/life-under-water)
 
 
 ![image](https://github.com/Computer-game-development-course/A-Components/assets/93255163/24ff92a2-d580-4a5b-8002-413570bdfe62)
-
-</div>
